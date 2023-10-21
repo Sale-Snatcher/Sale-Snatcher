@@ -1,0 +1,73 @@
+/* updated webpack config -- added rules for css files and image files, looked up the regex for the test 
++
+installed css-loader (npm install --save-dev css-loader),
+style loader (npm install --save-dev style-loader).
+deprecated file loader (npm install --save-dev file-loader)
+will probably need to npm install HTMLWebpackPlugin  */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+/* prevent the browser from applying its default margins & padding (not necessary though) */
+
+header {
+  background-color: rgb(16, 73, 232);
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end; 
+  /* https://css-tricks.com/almanac/properties/j/justify-content/ */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  font-size: 18px; 
+}
+
+header ul {
+  list-style-type: none;
+  display: flex;
+  gap: 4rem;
+}
+ 
+header a {
+  /*under the hood, Link components are anchor tags*/
+  list-style-type: none; /* remove bullet points*/
+  text-decoration: none; /*remove underline*/
+  color: white; /* Inherit the color from the parent */
+}
+
+header a:hover {
+  cursor: pointer; 
+}
+
+
+main {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 300px;
+  /* want to find a better way to center vertically! */
+}
+
+main button {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border: 2px solid darkgray; 
+  color: black; 
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.unstyled-link {
+  text-decoration: none; 
+  color: inherit;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+
+
