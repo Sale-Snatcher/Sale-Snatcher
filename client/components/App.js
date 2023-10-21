@@ -1,22 +1,18 @@
 import React from 'react';
-import {Route, Routes} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import { Seller } from './Seller';
+import { NotFound } from './NotFound';
 
 console.log('hi');
 const App = () => {
   return (
     <>
-        <div>
-        <h1>hello world</h1>
-        </div>
-        
-        <Routes>
-            <Route path='/' element={<Home />} />
-
-            <Route path='/about' element={<About />} />
-        </Routes>
+      <Routes>
+        <Route path='/seller' element={<Seller />} />
+        <Route path='/*' element={<NotFound />} />
+      </Routes>
     </>
-  )
+  );
 };
-
 
 export default App;
