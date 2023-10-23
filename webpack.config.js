@@ -34,7 +34,8 @@ module.exports = {
     historyApiFallback: true,
     proxy: {
       '/sellers': 'http://localhost:3000',
-      '/buyers': 'http://localhost:3000',
+      '/buyers/display': 'http://localhost:3000',
+      '/buyers/purchaseItem': 'http://localhost:3000',
     },
   },
 };
