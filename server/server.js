@@ -7,6 +7,7 @@ const db = require('./database/Models.js');
 
 //handle parsing request body
 app.use(express.json());
+app.use(cors()); // playing with this... https://www.npmjs.com/package/cors 
 
 //define routes -- any request that comes in goes straight to the routes
 //have the request be sent to a wildcard and forward that to the index.html
