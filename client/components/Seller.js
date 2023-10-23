@@ -17,12 +17,33 @@ export const Seller = () => {
   };
 
   const addItem = () => {
-    const obj = {};
-    obj.name = itemNameField;
-    obj.description = itemDescriptionField;
-    obj.price = itemPriceField;
-    console.log(obj);
-    return obj;
+    // const obj = {};
+    // obj.name = itemNameField;
+    // obj.description = itemDescriptionField;
+    // obj.price = itemPriceField;
+    // console.log(obj);
+
+    fetch('/sellers/addItems', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        item: itemNameField,
+        description: itemDescriptionField,
+        price: itemPriceField,
+      }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log('data: ', data);
+        setItemNameField('');
+        setItemDescriptionField('');
+        setItemPriceField('');
+      })
+      .catch(error => {
+        console.error('Error fetching data: ', error);
+      });
   };
 
   return (

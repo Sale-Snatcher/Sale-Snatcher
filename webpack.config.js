@@ -32,5 +32,9 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
+    proxy: {
+      '/sellers': 'http://localhost:3000',
+      '/buyers': 'http://localhost:3000',
+    },
   },
 };
